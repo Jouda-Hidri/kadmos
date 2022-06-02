@@ -4,12 +4,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import saving.saving.api.dto.TransactionRequest;
 import saving.saving.api.dto.TransactionResponse;
 import saving.saving.service.SavingService;
 
 @RestController
+@RequestMapping("/balance")
 public class SavingController {
 	private final SavingService savingService;
 
@@ -18,8 +20,9 @@ public class SavingController {
 	}
 
 	@GetMapping
-	public String index() {
-		return "Hello World";
+	public ResponseEntity<TransactionResponse> find() {
+		final var response = savingService.find();
+		return ResponseEntity.ok(response);
 	}
 
 	@PutMapping
