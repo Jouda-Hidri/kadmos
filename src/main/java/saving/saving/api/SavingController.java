@@ -13,21 +13,22 @@ import saving.saving.service.SavingService;
 @RestController
 @RequestMapping("/balance")
 public class SavingController {
-	private final SavingService savingService;
 
-	public SavingController(final SavingService savingService) {
-		this.savingService = savingService;
-	}
+  private final SavingService savingService;
 
-	@GetMapping
-	public ResponseEntity<TransactionResponse> find() {
-		final var response = savingService.find();
-		return ResponseEntity.ok(response);
-	}
+  public SavingController(final SavingService savingService) {
+    this.savingService = savingService;
+  }
 
-	@PutMapping
-	public ResponseEntity<TransactionResponse> update(@RequestBody final TransactionRequest request) {
-		final var response = savingService.update(request.getAmount());
-		return ResponseEntity.ok(response);
-	}
+  @GetMapping
+  public ResponseEntity<TransactionResponse> fetchBalance() {
+    final var response = new TransactionResponse(savingService.findAccount());
+    return ResponseEntity.ok(response);
+  }
+
+  @PutMapping
+  public ResponseEntity<TransactionResponse> updateBalance(@RequestBody final TransactionRequest request) {
+    final var response = new TransactionResponse(savingService.updateBalance(request.getAmount()));
+    return ResponseEntity.ok(response);
+  }
 }
