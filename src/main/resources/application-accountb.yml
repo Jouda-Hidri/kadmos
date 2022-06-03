@@ -2,4 +2,4 @@ server:
   port: 8082
 spring:
   datasource:
-    url: jdbc:postgresql://dbpostgresqlb:5432/savingdb # postgres db for account b
+    url: jdbc:postgresql://postgresqlb:5432/savingdb

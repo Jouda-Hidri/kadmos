@@ -4,7 +4,7 @@ spring:
   flyway:
     baselineOnMigrate: true
   datasource:
-    url: jdbc:postgresql://dbpostgresql:5432/savingdb
+    url: jdbc:postgresql://postgresqla:5432/savingdb
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: password
