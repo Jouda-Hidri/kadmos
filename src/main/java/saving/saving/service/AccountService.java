@@ -7,12 +7,12 @@ import saving.saving.persistence.Account;
 import saving.saving.persistence.AccountRepo;
 
 @Service
-public class SavingService {
+public class AccountService {
 
   public static final long ACCOUNT_ID = 1L;
   private final AccountRepo accountRepo;
 
-  public SavingService(final AccountRepo accountRepo) {
+  public AccountService(final AccountRepo accountRepo) {
     this.accountRepo = accountRepo;
   }
 

@@ -20,17 +20,17 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import saving.saving.persistence.Account;
 import saving.saving.persistence.AccountRepo;
-import saving.saving.service.SavingService;
+import saving.saving.service.AccountService;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class SavingControllerTest {
+class AccountControllerTest {
 
   @Autowired
   MockMvc mockMvc;
 
   @Autowired
-  private SavingService savingService;
+  private AccountService accountService;
 
   @MockBean
   private AccountRepo accountRepo;

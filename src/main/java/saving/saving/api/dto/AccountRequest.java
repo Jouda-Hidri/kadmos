@@ -1,6 +1,6 @@
 package saving.saving.api.dto;
 
-public class TransactionRequest {
+public class AccountRequest {
 
   private Long amount;
 

@@ -2,15 +2,15 @@ package saving.saving.api.dto;
 
 import saving.saving.persistence.Account;
 
-public class TransactionResponse {
+public class AccountResponse {
 
   private Long balance;
 
-  public TransactionResponse() {
+  public AccountResponse() {
 
   }
 
-  public TransactionResponse(final Account account) {
+  public AccountResponse(final Account account) {
     this.balance = account.getBalance();
   }
 
